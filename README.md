@@ -27,7 +27,7 @@ bun run build
 Set the target Mesh app instance URL in `.env`:
 
 ```env
-VITE_APP_URL=https://app.mesh.asy.web.id
+VITE_APP_URL=https://app-mesh.asy.web.id
 ```
 
 ## License

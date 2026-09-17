@@ -1,7 +1,7 @@
 <script lang="ts">
 	import logo from '$lib/assets/logo.png';
 
-	const APP_URL = import.meta.env.VITE_APP_URL || 'https://app.mesh.asy.web.id';
+	const APP_URL = import.meta.env.VITE_APP_URL || 'https://app-mesh.asy.web.id';
 
 	let joinInput = $state('');
 	let joinPassword = $state('');
