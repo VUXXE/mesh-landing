@@ -128,13 +128,12 @@
 				class="mt-6 flex items-center justify-between border-t border-(--surface-2) pt-4 text-xs text-(--ink-2)"
 			>
 				<span>Need a new whiteboard?</span>
-				<button
-					type="button"
-					onclick={createNewRoom}
+				<a
+					href={APP_URL}
 					class="font-semibold text-(--ink-1) underline underline-offset-4 hover:text-(--accent-lime)"
 				>
 					Create New Room
-				</button>
+				</a>
 			</div>
 		</div>
 	</main>

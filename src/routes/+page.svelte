@@ -94,19 +94,9 @@
 		};
 	});
 
-	function generateRoomId(): string {
-		const chars = 'abcdefghjkmnpqrstuvwxyz23456789';
-		let result = '';
-		for (let i = 0; i < 6; i++) {
-			result += chars.charAt(Math.floor(Math.random() * chars.length));
-		}
-		return `room-${result}`;
-	}
-
 	function createRoom() {
-		const newId = generateRoomId();
 		if (typeof window !== 'undefined') {
-			window.location.href = `${APP_URL}/room/${newId}`;
+			window.location.href = APP_URL;
 		}
 	}
 
@@ -263,9 +253,8 @@
 				</a>
 
 				<!-- Quick Create CTA Button -->
-				<button
-					type="button"
-					onclick={createRoom}
+				<a
+					href={APP_URL}
 					class="group inline-flex h-8 items-center gap-1.5 rounded-lg bg-(--ink-1) px-3.5 text-xs font-bold text-(--surface-0) shadow-sm transition-all hover:bg-(--ink-1)/90 hover:shadow-md"
 				>
 					<svg
@@ -281,7 +270,7 @@
 						<line x1="5" y1="12" x2="19" y2="12"></line>
 					</svg>
 					<span>New Room</span>
-				</button>
+				</a>
 			</div>
 		</nav>
 	</header>
@@ -333,13 +322,12 @@
 
 			<!-- Hero Action Buttons -->
 			<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-				<button
-					type="button"
-					onclick={createRoom}
+				<a
+					href={APP_URL}
 					class="rounded-lg bg-(--ink-1) px-6 py-2.5 text-sm font-bold text-(--surface-0) transition-colors hover:bg-(--ink-1)/90"
 				>
 					Launch Whiteboard
-				</button>
+				</a>
 				<a
 					href={APP_URL}
 					class="rounded-lg border border-(--surface-2) bg-(--surface-1) px-5 py-2.5 text-sm font-semibold text-(--ink-1) transition-colors hover:border-(--surface-3)"
@@ -438,13 +426,12 @@
 						>
 							Expand View
 						</button>
-						<button
-							type="button"
-							onclick={createRoom}
+						<a
+							href={APP_URL}
 							class="font-semibold text-(--ink-1) transition-colors hover:text-(--accent-lime)"
 						>
 							Launch Live Room →
-						</button>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -932,13 +919,12 @@
 					</div>
 
 					<div class="flex items-center gap-3">
-						<button
-							type="button"
-							onclick={createRoom}
+						<a
+							href={APP_URL}
 							class="rounded-lg bg-(--ink-1) px-3 py-1 text-xs font-bold text-(--surface-0) transition-colors hover:bg-(--ink-1)/90"
 						>
 							Launch Live Room
-						</button>
+						</a>
 						<button
 							type="button"
 							onclick={() => (showLightbox = false)}
