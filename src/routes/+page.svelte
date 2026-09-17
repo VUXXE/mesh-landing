@@ -4,7 +4,7 @@
 	import logo from '$lib/assets/logo.png';
 
 	const REPO = 'VUXXE/Mesh';
-	const APP_URL = import.meta.env.VITE_APP_URL || 'https://mesh.asy.web.id';
+	const APP_URL = import.meta.env.VITE_APP_URL || 'https://app.mesh.asy.web.id';
 
 	let starCount = $state<number | null>(null);
 	let isLight = $state(false);
