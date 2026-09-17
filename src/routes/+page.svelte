@@ -188,33 +188,37 @@
 			</div>
 
 			<!-- Right Actions: Theme Toggle, GitHub Stars, Action Pill -->
-			<div class="flex items-center gap-2.5 sm:gap-3">
+			<div class="flex items-center gap-2 sm:gap-2.5">
 				<!-- Theme Toggle -->
 				<button
 					type="button"
 					onclick={toggleTheme}
 					aria-label="Toggle visual theme"
-					class="flex h-8 w-8 items-center justify-center rounded-lg border border-(--surface-2) bg-(--surface-0) text-(--ink-2) transition-colors hover:border-(--surface-3) hover:text-(--ink-1)"
+					class="group flex h-8 w-8 items-center justify-center rounded-lg border border-(--surface-2) bg-(--surface-0)/80 text-(--ink-2) shadow-xs transition-all hover:border-(--surface-3) hover:bg-(--surface-1) hover:text-(--ink-1)"
 				>
 					{#if isLight}
 						<!-- Moon Icon -->
 						<svg
-							class="h-4 w-4"
+							class="h-4 w-4 transition-transform duration-300 group-hover:-rotate-12 group-hover:scale-110"
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
 							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
 						>
 							<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
 						</svg>
 					{:else}
 						<!-- Sun Icon -->
 						<svg
-							class="h-4 w-4"
+							class="h-4 w-4 transition-transform duration-300 group-hover:rotate-45 group-hover:scale-110"
 							viewBox="0 0 24 24"
 							fill="none"
 							stroke="currentColor"
 							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
 						>
 							<circle cx="12" cy="12" r="5"></circle>
 							<line x1="12" y1="1" x2="12" y2="3"></line>
@@ -229,25 +233,39 @@
 					{/if}
 				</button>
 
-				<!-- GitHub Pill -->
+				<!-- GitHub Pill (Divided Badge) -->
 				<a
 					href="https://github.com/{REPO}"
 					target="_blank"
 					rel="noreferrer"
-					class="hidden h-8 items-center gap-1.5 rounded-lg border border-(--surface-2) bg-(--surface-0) px-3 text-xs font-semibold text-(--ink-2) transition-colors hover:border-(--surface-3) hover:text-(--ink-1) sm:inline-flex"
+					class="group hidden h-8 items-center gap-2 rounded-lg border border-(--surface-2) bg-(--surface-0)/80 px-2.5 text-xs font-semibold text-(--ink-2) shadow-xs transition-all hover:border-(--surface-3) hover:bg-(--surface-1) hover:text-(--ink-1) sm:inline-flex"
 				>
-					<svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24">
-						<path
-							d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
-						/>
-					</svg>
-					<span>★ {starCount !== null ? formatStars(starCount) : 'Star'}</span>
+					<div class="flex items-center gap-1.5">
+						<svg
+							class="h-3.5 w-3.5 fill-current transition-transform duration-200 group-hover:scale-110"
+							viewBox="0 0 24 24"
+						>
+							<path
+								d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+							/>
+						</svg>
+						<span>Star</span>
+					</div>
+					<span class="h-3 w-px bg-(--surface-2)"></span>
+					<span class="flex items-center gap-1 font-mono text-[11px] font-medium text-(--ink-1)">
+						<svg class="h-3 w-3 fill-amber-400 text-amber-400" viewBox="0 0 24 24">
+							<polygon
+								points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+							/>
+						</svg>
+						<span>{starCount !== null ? formatStars(starCount) : '—'}</span>
+					</span>
 				</a>
 
 				<!-- Join Room Action -->
 				<a
 					href={APP_URL}
-					class="hidden h-8 items-center rounded-lg border border-(--surface-2) bg-(--surface-0) px-3 text-xs font-semibold text-(--ink-2) transition-colors hover:border-(--surface-3) hover:text-(--ink-1) sm:inline-flex"
+					class="hidden h-8 items-center rounded-lg border border-(--surface-2) bg-(--surface-0)/80 px-3 text-xs font-semibold text-(--ink-2) shadow-xs transition-all hover:border-(--surface-3) hover:bg-(--surface-1) hover:text-(--ink-1) sm:inline-flex"
 				>
 					<span>Join Room</span>
 				</a>
@@ -256,10 +274,10 @@
 				<button
 					type="button"
 					onclick={createRoom}
-					class="inline-flex h-8 items-center gap-1.5 rounded-lg bg-(--ink-1) px-3 text-xs font-bold text-(--surface-0) transition-all hover:opacity-90"
+					class="group inline-flex h-8 items-center gap-1.5 rounded-lg bg-(--ink-1) px-3.5 text-xs font-bold text-(--surface-0) shadow-sm transition-all hover:bg-(--ink-1)/90 hover:shadow-md"
 				>
 					<svg
-						class="h-3.5 w-3.5"
+						class="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-90"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
