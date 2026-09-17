@@ -189,12 +189,12 @@
 
 			<!-- Right Actions: Theme Toggle, GitHub Stars, Action Pill -->
 			<div class="flex items-center gap-2 sm:gap-2.5">
-				<!-- Theme Toggle -->
+				<!-- Theme Toggle (Ghost Icon Style) -->
 				<button
 					type="button"
 					onclick={toggleTheme}
 					aria-label="Toggle visual theme"
-					class="group flex h-8 w-8 items-center justify-center rounded-lg border border-(--surface-2) bg-(--surface-0)/80 text-(--ink-2) shadow-xs transition-all hover:border-(--surface-3) hover:bg-(--surface-1) hover:text-(--ink-1)"
+					class="group flex h-8 w-8 items-center justify-center rounded-lg text-(--ink-2) transition-all hover:bg-(--surface-2)/60 hover:text-(--ink-1)"
 				>
 					{#if isLight}
 						<!-- Moon Icon -->
