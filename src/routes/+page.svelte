@@ -336,12 +336,6 @@
 				>
 					Join Session
 				</a>
-				<a
-					href="#workbench"
-					class="rounded-lg border border-(--surface-2) bg-(--surface-0) px-5 py-2.5 text-sm font-semibold text-(--ink-2) transition-colors hover:border-(--surface-3) hover:text-(--ink-1)"
-				>
-					Explore Workbench
-				</a>
 			</div>
 		</section>
 
