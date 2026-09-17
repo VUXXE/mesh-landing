@@ -58,6 +58,11 @@ html.light {
 	scrollbar-width: none;
 }
 
+.landing-dots {
+	background-image: radial-gradient(circle, var(--grid-dot) 1px, transparent 1px);
+	background-size: 28px 28px;
+}
+
 /* OpenDesign style utilities */
 .od-highlight {
 	background: linear-gradient(transparent 56%, var(--highlight-bg) 0);

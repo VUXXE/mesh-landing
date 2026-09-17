@@ -139,7 +139,7 @@
 <div
 	bind:this={scrollContainer}
 	onscroll={handleScroll}
-	class="relative h-screen w-screen overflow-x-hidden overflow-y-auto bg-(--surface-0) text-(--ink-1) selection:bg-(--accent-lime)/30"
+	class="landing-dots relative h-screen w-screen overflow-x-hidden overflow-y-auto bg-(--surface-0) text-(--ink-1) selection:bg-(--accent-lime)/30"
 >
 	<!-- SIDE RAILS (OpenDesign signature technical rails) -->
 	<aside
