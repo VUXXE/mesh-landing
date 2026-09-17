@@ -262,14 +262,6 @@
 					</span>
 				</a>
 
-				<!-- Join Room Action -->
-				<a
-					href={APP_URL}
-					class="hidden h-8 items-center rounded-lg border border-(--surface-2) bg-(--surface-0)/80 px-3 text-xs font-semibold text-(--ink-2) shadow-xs transition-all hover:border-(--surface-3) hover:bg-(--surface-1) hover:text-(--ink-1) sm:inline-flex"
-				>
-					<span>Join Room</span>
-				</a>
-
 				<!-- Quick Create CTA Button -->
 				<button
 					type="button"
