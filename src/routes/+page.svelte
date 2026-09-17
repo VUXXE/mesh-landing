@@ -251,7 +251,7 @@
 
 				<!-- Join Room Action -->
 				<a
-					href="/join"
+					href={APP_URL}
 					class="hidden h-8 items-center rounded-lg border border-(--surface-2) bg-(--surface-0) px-3 text-xs font-semibold text-(--ink-2) transition-colors hover:border-(--surface-3) hover:text-(--ink-1) sm:inline-flex"
 				>
 					<span>Join Room</span>
@@ -336,7 +336,7 @@
 					Launch Whiteboard
 				</button>
 				<a
-					href="/join"
+					href={APP_URL}
 					class="rounded-lg border border-(--surface-2) bg-(--surface-1) px-5 py-2.5 text-sm font-semibold text-(--ink-1) transition-colors hover:border-(--surface-3)"
 				>
 					Join Session
