@@ -168,11 +168,6 @@
 			<a href="/" class="text-decoration-none flex items-center gap-2.5">
 				<img src={logo} alt="Mesh Logo" class="h-7 w-7 rounded-lg object-contain shadow-xs" />
 				<span class="font-extrabold tracking-tight text-(--ink-1) sm:text-base">Mesh</span>
-				<span
-					class="hidden items-center gap-1.5 rounded-md border border-(--accent-lime)/30 bg-(--accent-lime)/10 px-2 py-0.5 text-[10px] font-bold text-(--accent-lime) sm:inline-flex"
-				>
-					v1.0 Edge
-				</span>
 			</a>
 
 			<!-- Nav Links -->
