@@ -162,7 +162,7 @@
 		<nav
 			class="flex items-center justify-between gap-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] {isScrolled
 				? 'rounded-full border border-(--surface-2) bg-(--surface-1)/95 px-4 py-2.5 shadow-lg backdrop-blur-md sm:px-6'
-				: 'rounded-none border-b border-(--surface-2) bg-(--surface-0)/90 px-2 py-3.5 backdrop-blur-sm sm:px-4'}"
+				: 'rounded-none border border-transparent bg-transparent px-2 py-4 sm:px-4'}"
 		>
 			<!-- Brand Mark & Identity -->
 			<a href="/" class="text-decoration-none flex items-center gap-2.5">
