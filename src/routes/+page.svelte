@@ -157,12 +157,12 @@
 	<header
 		class="sticky z-50 mx-auto w-full transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] {isScrolled
 			? 'top-4 max-w-5xl px-4 sm:px-6'
-			: 'top-0 max-w-full px-0'}"
+			: 'top-0 max-w-6xl px-4 sm:px-6 lg:px-8'}"
 	>
 		<nav
 			class="flex items-center justify-between gap-4 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] {isScrolled
 				? 'rounded-full border border-(--surface-2) bg-(--surface-1)/95 px-4 py-2.5 shadow-lg backdrop-blur-md sm:px-6'
-				: 'rounded-none border-t-0 border-r-0 border-b border-l-0 border-(--surface-2) bg-(--surface-0)/90 px-6 py-3.5 backdrop-blur-sm sm:px-10'}"
+				: 'rounded-none border-b border-(--surface-2) bg-(--surface-0)/90 px-2 py-3.5 backdrop-blur-sm sm:px-4'}"
 		>
 			<!-- Brand Mark & Identity -->
 			<a href="/" class="text-decoration-none flex items-center gap-2.5">
