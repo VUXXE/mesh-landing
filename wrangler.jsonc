@@ -7,11 +7,5 @@
 		"html_handling": "auto-trailing-slash",
 		"not_found_handling": "single-page-application"
 	},
-	"routes": [
-		{
-			"pattern": "mesh.asy.web.id",
-			"custom_domain": true
-		}
-	],
 	"workers_dev": false
 }
