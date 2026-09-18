@@ -372,31 +372,15 @@
 			<div
 				class="overflow-hidden rounded-2xl border border-(--surface-2) bg-(--surface-1) shadow-2xl shadow-black/30"
 			>
-				<!-- Window Header Bar (macOS traffic lights + URL bar) -->
+				<!-- Window Header Bar (macOS traffic lights) -->
 				<div
-					class="flex items-center justify-between border-b border-(--surface-2) bg-(--surface-0)/90 px-4 py-3 sm:px-6"
+					class="flex items-center border-b border-(--surface-2) bg-(--surface-0)/90 px-4 py-3 sm:px-6"
 				>
 					<div class="flex items-center gap-2">
 						<span class="h-3 w-3 rounded-full bg-[#ef4444]/80"></span>
 						<span class="h-3 w-3 rounded-full bg-[#eab308]/80"></span>
 						<span class="h-3 w-3 rounded-full bg-[#22c55e]/80"></span>
 					</div>
-					<div
-						class="flex items-center gap-2 rounded-md border border-(--surface-2) bg-(--surface-1) px-3 py-1 font-mono text-xs text-(--ink-2)"
-					>
-						<svg
-							class="h-3.5 w-3.5 text-(--accent-lime)"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-						>
-							<rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-							<path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-						</svg>
-						<span>https://mesh.workers.dev/room/demo-showcase</span>
-					</div>
-					<div class="w-12"></div>
 				</div>
 
 				<!-- Full-Width Screenshot Display -->
