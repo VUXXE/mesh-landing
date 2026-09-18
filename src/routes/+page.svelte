@@ -315,6 +315,16 @@
 					</span>
 				</div>
 
+				<!-- Simulated Peer Cursor 3 (Alex - Bottom Right Handle) -->
+				<div class="pointer-events-none absolute -bottom-7 -right-4 z-20 flex items-start select-none sm:-right-10">
+					<svg class="h-6 w-6 drop-shadow-lg" viewBox="0 0 24 24" fill="#06b6d4" stroke="#121214" stroke-width="1.5">
+						<path d="M5.653 3.123l14.07 10.553a1 1 0 01-.137 1.704l-5.652 2.12a1 1 0 00-.592.592l-2.12 5.652a1 1 0 01-1.704.137L3.123 5.653a1 1 0 011.53-1.53z" />
+					</svg>
+					<span class="ml-1.5 mt-2.5 rounded-full bg-cyan-400 px-2.5 py-0.5 font-mono text-xs font-bold text-black shadow-lg">
+						Alex
+					</span>
+				</div>
+
 				<p class="font-mono text-xs font-bold tracking-widest text-(--accent-lime) uppercase">
 					Real-time Collaborative System
 				</p>
@@ -341,16 +351,7 @@
 					</div>
 
 			<!-- Hero Action Buttons -->
-			<div class="relative mt-8 flex flex-wrap items-center justify-center gap-3">
-				<!-- Simulated Peer Cursor 3 (Alex - Pointing to CTA) -->
-				<div class="pointer-events-none absolute -top-7 right-6 z-20 hidden items-start select-none md:flex lg:right-32">
-					<svg class="h-6 w-6 drop-shadow-lg" viewBox="0 0 24 24" fill="#06b6d4" stroke="#121214" stroke-width="1.5">
-						<path d="M5.653 3.123l14.07 10.553a1 1 0 01-.137 1.704l-5.652 2.12a1 1 0 00-.592.592l-2.12 5.652a1 1 0 01-1.704.137L3.123 5.653a1 1 0 011.53-1.53z" />
-					</svg>
-					<span class="ml-1.5 mt-2.5 rounded-full bg-cyan-400 px-2.5 py-0.5 font-mono text-xs font-bold text-black shadow-lg">
-						Alex
-					</span>
-				</div>
+			<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
 
 				<a
 					href={APP_URL}
