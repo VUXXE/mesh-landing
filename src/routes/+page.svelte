@@ -296,21 +296,21 @@
 				<span class="absolute top-1/2 -right-1.5 -translate-y-1/2 h-3 w-3 border border-(--surface-0) bg-(--accent-lime)"></span>
 
 				<!-- Simulated Peer Cursor 1 (Hanan - Top Right Handle) -->
-				<div class="pointer-events-none absolute -top-5 -right-3 z-20 flex items-start select-none sm:-right-8">
-					<svg class="h-4 w-4 drop-shadow-md" viewBox="0 0 24 24" fill="#10b981" stroke="#121214" stroke-width="1.5">
+				<div class="pointer-events-none absolute -top-7 -right-4 z-20 flex items-start select-none sm:-right-10">
+					<svg class="h-6 w-6 drop-shadow-lg" viewBox="0 0 24 24" fill="#10b981" stroke="#121214" stroke-width="1.5">
 						<path d="M5.653 3.123l14.07 10.553a1 1 0 01-.137 1.704l-5.652 2.12a1 1 0 00-.592.592l-2.12 5.652a1 1 0 01-1.704.137L3.123 5.653a1 1 0 011.53-1.53z" />
 					</svg>
-					<span class="ml-1 -mt-0.5 rounded-full bg-emerald-500 px-2 py-0.5 font-mono text-[10px] font-bold text-black shadow-md">
+					<span class="ml-1.5 mt-2.5 rounded-full bg-emerald-500 px-2.5 py-0.5 font-mono text-xs font-bold text-black shadow-lg">
 						Hanan
 					</span>
 				</div>
 
 				<!-- Simulated Peer Cursor 2 (Maya - Bottom Left Handle) -->
-				<div class="pointer-events-none absolute -bottom-5 -left-3 z-20 flex items-start select-none sm:-left-6">
-					<svg class="h-4 w-4 drop-shadow-md" viewBox="0 0 24 24" fill="#8b5cf6" stroke="#121214" stroke-width="1.5">
+				<div class="pointer-events-none absolute -bottom-7 -left-4 z-20 flex items-start select-none sm:-left-8">
+					<svg class="h-6 w-6 drop-shadow-lg" viewBox="0 0 24 24" fill="#8b5cf6" stroke="#121214" stroke-width="1.5">
 						<path d="M5.653 3.123l14.07 10.553a1 1 0 01-.137 1.704l-5.652 2.12a1 1 0 00-.592.592l-2.12 5.652a1 1 0 01-1.704.137L3.123 5.653a1 1 0 011.53-1.53z" />
 					</svg>
-					<span class="ml-1 -mt-0.5 rounded-full bg-purple-500 px-2 py-0.5 font-mono text-[10px] font-bold text-white shadow-md">
+					<span class="ml-1.5 mt-2.5 rounded-full bg-purple-500 px-2.5 py-0.5 font-mono text-xs font-bold text-white shadow-lg">
 						Maya
 					</span>
 				</div>
@@ -343,11 +343,11 @@
 			<!-- Hero Action Buttons -->
 			<div class="relative mt-8 flex flex-wrap items-center justify-center gap-3">
 				<!-- Simulated Peer Cursor 3 (Alex - Pointing to CTA) -->
-				<div class="pointer-events-none absolute -top-5 right-4 z-20 hidden items-start select-none md:flex lg:right-28">
-					<svg class="h-4 w-4 drop-shadow-md" viewBox="0 0 24 24" fill="#06b6d4" stroke="#121214" stroke-width="1.5">
+				<div class="pointer-events-none absolute -top-7 right-6 z-20 hidden items-start select-none md:flex lg:right-32">
+					<svg class="h-6 w-6 drop-shadow-lg" viewBox="0 0 24 24" fill="#06b6d4" stroke="#121214" stroke-width="1.5">
 						<path d="M5.653 3.123l14.07 10.553a1 1 0 01-.137 1.704l-5.652 2.12a1 1 0 00-.592.592l-2.12 5.652a1 1 0 01-1.704.137L3.123 5.653a1 1 0 011.53-1.53z" />
 					</svg>
-					<span class="ml-1 -mt-0.5 rounded-full bg-cyan-400 px-2 py-0.5 font-mono text-[10px] font-bold text-black shadow-md">
+					<span class="ml-1.5 mt-2.5 rounded-full bg-cyan-400 px-2.5 py-0.5 font-mono text-xs font-bold text-black shadow-lg">
 						Alex
 					</span>
 				</div>
