@@ -12,7 +12,7 @@
 		joinError = '';
 		let trimmed = joinInput.trim();
 		if (!trimmed) {
-			joinError = 'Please enter a room code or link';
+			joinError = 'Enter a room code or link first';
 			return;
 		}
 
@@ -21,7 +21,7 @@
 		}
 
 		if (!/^[a-zA-Z0-9_-]{3,64}$/.test(trimmed)) {
-			joinError = 'Room ID must be 3-64 alphanumeric characters, underscores, or hyphens';
+			joinError = 'Room codes are 3 to 64 characters: letters, numbers, underscores, or hyphens';
 			return;
 		}
 
@@ -57,6 +57,10 @@
 
 <svelte:head>
 	<title>Join Room // Mesh</title>
+	<meta
+		name="description"
+		content="Open an existing Mesh whiteboard by room code or shared link, with the room password if it has one."
+	/>
 </svelte:head>
 
 <div
@@ -120,7 +124,7 @@
 					type="submit"
 					class="w-full rounded-lg bg-(--ink-1) py-2.5 text-xs font-bold text-(--surface-0) transition-opacity hover:opacity-90"
 				>
-					Join Session
+					Join Room
 				</button>
 			</form>
 
@@ -132,7 +136,7 @@
 					href={APP_URL}
 					class="font-semibold text-(--ink-1) underline underline-offset-4 hover:text-(--accent-lime)"
 				>
-					Create New Room
+					New Room
 				</a>
 			</div>
 		</div>

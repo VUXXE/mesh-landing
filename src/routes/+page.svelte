@@ -122,7 +122,7 @@
 	<title>Mesh: Open-Source Edge Vector Whiteboard</title>
 	<meta
 		name="description"
-		content="Fast, distraction-free collaborative vector whiteboard on Cloudflare Workers and Svelte 5. Sub-16ms drawing feedback, embedded SQLite, and adaptive ephemeral presence."
+		content="A collaborative vector whiteboard on Cloudflare Workers and Svelte 5. Sub-16ms drawing feedback, embedded SQLite per room, and cursor updates that stop when you are drawing alone."
 	/>
 </svelte:head>
 
@@ -326,7 +326,7 @@
 				</div>
 
 				<p class="font-mono text-xs font-bold tracking-widest text-(--accent-lime) uppercase">
-					Real-time Collaborative System
+					Open source · MIT license
 				</p>
 				<h1
 					class="mt-3 text-3xl font-black tracking-tight text-(--ink-1) sm:text-5xl sm:leading-tight lg:text-6xl"
@@ -338,8 +338,8 @@
 
 			<!-- Hero Subheading -->
 					<p class="mt-6 max-w-2xl text-base leading-relaxed text-(--ink-2) sm:text-lg">
-						Built for engineers and product teams. Sub-16ms vector input, adaptive 15Hz presence, and
-						embedded SQLite persistence. No sign-ups, no tracking cookies, and zero idle compute costs.
+						Sub-16ms vector input, 15Hz presence, and SQLite persistence in every room. No sign-ups,
+						no tracking cookies, and no compute spent while you draw alone.
 					</p>
 
 					<!-- Ticker -->
@@ -357,13 +357,13 @@
 					href={APP_URL}
 					class="rounded-lg bg-(--ink-1) px-6 py-2.5 text-sm font-bold text-(--surface-0) transition-colors hover:bg-(--ink-1)/90"
 				>
-					Launch Whiteboard
+					New Room
 				</a>
 				<a
-					href={APP_URL}
+					href="/join"
 					class="rounded-lg border border-(--surface-2) bg-(--surface-1) px-5 py-2.5 text-sm font-semibold text-(--ink-1) transition-colors hover:border-(--surface-3)"
 				>
-					Join Session
+					Join a room
 				</a>
 			</div>
 		</section>
@@ -431,7 +431,7 @@
 				>
 					<div class="flex items-center gap-2">
 						<span class="font-mono text-(--accent-lime)">●</span>
-						<span>Authentic vector render loop running at 60fps</span>
+						<span>Two canvas layers: committed shapes below, live preview on top</span>
 					</div>
 					<div class="flex items-center gap-4 font-mono text-xs">
 						<button
@@ -445,7 +445,7 @@
 							href={APP_URL}
 							class="font-semibold text-(--ink-1) transition-colors hover:text-(--accent-lime)"
 						>
-							Launch Live Room →
+							New Room →
 						</a>
 					</div>
 				</div>
@@ -464,11 +464,8 @@
 					</span>
 				</div>
 				<h2 class="mt-2 text-2xl font-black tracking-tight text-(--ink-1) sm:text-3xl">
-					Engineered for speed, built without bloat.
+					Four subsystems, no framework in the middle.
 				</h2>
-				<p class="mt-2 text-sm text-(--ink-2)">
-					Select a subsystem below to inspect its architecture guarantees and design decisions.
-				</p>
 			</div>
 
 			<!-- Interactive Subsystem Tabs -->
@@ -511,7 +508,7 @@
 						? 'bg-(--ink-1) text-(--surface-0)'
 						: 'bg-(--surface-1) text-(--ink-2) hover:text-(--ink-1)'}"
 				>
-					Zero-Knowledge Auth
+					Room Keys
 				</button>
 			</div>
 
@@ -566,8 +563,8 @@
 							<p class="mt-3 text-sm leading-relaxed text-(--ink-2)">
 								Each whiteboard room operates as an independent Cloudflare Durable Object isolate
 								with its own embedded SQLite database. Multi-user concurrent writes resolve via
-								Last-Write-Wins with clock-skew safeguards, preventing conflicting mutations without
-								centralized database bottlenecks.
+								Last-Write-Wins with clock-skew safeguards. Because every room has its own database,
+								writes in one room never queue behind another.
 							</p>
 							<div class="mt-5 grid grid-cols-2 gap-4 font-mono text-xs">
 								<div class="rounded-xl border border-(--surface-2) bg-(--surface-0) p-3">
@@ -600,10 +597,10 @@
 							>
 							<h3 class="mt-2 text-xl font-black text-(--ink-1)">Adaptive 15Hz Presence</h3>
 							<p class="mt-3 text-sm leading-relaxed text-(--ink-2)">
-								Cursor tracking is broadcast in memory and never touches disk. While alone in a
-								room, cursor transmissions are completely suppressed, saving over 100,000
-								invocations per hour and preserving Cloudflare Free Tier quotas. When collaborating,
-								transmissions adaptively stream at 15Hz with deadband filtering.
+								Cursor tracking is broadcast in memory and never touches disk. Alone in a
+								room, Mesh stops sending cursor updates entirely, so an untouched board makes no
+								presence requests and burns none of your Workers quota. With other people in the room,
+								updates stream at 15Hz with deadband filtering.
 							</p>
 							<div class="mt-5 grid grid-cols-2 gap-4 font-mono text-xs">
 								<div class="rounded-xl border border-(--surface-2) bg-(--surface-0) p-3">
@@ -634,9 +631,9 @@
 					<div class="grid grid-cols-1 gap-8 md:grid-cols-2 md:items-center">
 						<div>
 							<span class="font-mono text-xs font-bold text-purple-400"
-								>// CRYPTOGRAPHIC VERIFICATION</span
+								>// CLIENT-SIDE KEY DERIVATION</span
 							>
-							<h3 class="mt-2 text-xl font-black text-(--ink-1)">Zero-Knowledge Room Locks</h3>
+							<h3 class="mt-2 text-xl font-black text-(--ink-1)">Client-Derived Room Keys</h3>
 							<p class="mt-3 text-sm leading-relaxed text-(--ink-2)">
 								Password-protected rooms enforce client-side derivation with PBKDF2-SHA256 (100,000
 								iterations). Unauthenticated sockets are strictly withheld from receiving shapes,
@@ -663,8 +660,8 @@
 								return this.hashesEqual(actual, expectedHash);
 							</p>
 							<p class="mt-4 text-(--ink-3)">
-								/* Rate limits: 5-second lockout after 5 fails; disconnect code 1008 after 10
-								attempts */
+							/* Rate limits: 5-second lockout after 5 failures; disconnect code 1008
+							after 10 attempts */
 							</p>
 						</div>
 					</div>
@@ -938,7 +935,7 @@
 							href={APP_URL}
 							class="rounded-lg bg-(--ink-1) px-3 py-1 text-xs font-bold text-(--surface-0) transition-colors hover:bg-(--ink-1)/90"
 						>
-							Launch Live Room
+							New Room
 						</a>
 						<button
 							type="button"
@@ -967,8 +964,7 @@
 					<div class="flex items-center gap-2">
 						<span class="h-1.5 w-1.5 rounded-full bg-(--accent-lime)"></span>
 						<span
-							>Authentic live canvas with Dual-layer 60fps rendering, SQLite storage, and 15Hz
-							presence</span
+							>Two canvas layers at 60fps, shapes in SQLite, presence at 15Hz</span
 						>
 					</div>
 					<span class="hidden font-mono text-[10px] text-(--ink-3) sm:inline-block"
