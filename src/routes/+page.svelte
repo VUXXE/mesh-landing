@@ -324,12 +324,8 @@
 						Alex
 					</span>
 				</div>
-
-				<p class="font-mono text-xs font-bold tracking-widest text-(--accent-lime) uppercase">
-					Open source · MIT license
-				</p>
 				<h1
-					class="mt-3 text-3xl font-black tracking-tight text-(--ink-1) sm:text-5xl sm:leading-tight lg:text-6xl"
+					class="text-3xl font-black tracking-tight text-(--ink-1) sm:text-5xl sm:leading-tight lg:text-6xl"
 				>
 					Real-time vector whiteboard,<br />
 					executed on the edge.
